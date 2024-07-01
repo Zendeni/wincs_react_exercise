@@ -1,5 +1,5 @@
+import { Center, Heading } from "@chakra-ui/react";
 import { useState } from "react";
-import "./App.css";
 import { DrinkChoice } from "./components/DrinkChoice";
 import { DrinkSearch } from "./components/DrinkSearch";
 
@@ -9,15 +9,17 @@ export const App = () => {
   const greeting = "Welcome to our cafe!";
 
   return (
-    <div className="App">
+    <Center h="100vh" flexDir="column">
       {userDrink ? (
-        <DrinkChoice drink={userDrink} clickFn={setUserDrink} />
+        <DrinkChoice drink={userDrink} onClick={setUserDrink} />
       ) : (
         <>
-          <h1>{greeting}</h1>
-          <DrinkSearch clickFn={setUserDrink} />
+          <Heading size="2xl" mb={8} color="blue.200">
+            {greeting}
+          </Heading>
+          <DrinkSearch onClick={setUserDrink} />
         </>
       )}
-    </div>
+    </Center>
   );
 };

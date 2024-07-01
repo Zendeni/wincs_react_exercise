@@ -1,7 +1,5 @@
-import './Button.css';
+import { Input } from "@chakra-ui/react";
 
-export const Button = ({ text, clickFn }) => (
-  <button className="button" onClick={clickFn}>
-    {text}
-  </button>
+export const TextInput = ({ onChange, ...props }) => (
+  <Input variant="flushed" onChange={onChange} {...props} />
 );
